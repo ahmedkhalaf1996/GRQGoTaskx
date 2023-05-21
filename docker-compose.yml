@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=meetmeup_dev
+  api:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: ahmedkhalaf666/qrph  # this will Download latest version Of GolfApp
+    ports:
+      - 8080:8080
+    environment:
+        DSN: postgresql://root:secret@postgres:5432/meetmeup_dev?sslmode=disable
+    command: ./mainapp
+    restart: always

@@ -1,0 +1,41 @@
+scalar Time
+scalar uint
+type AuthToken {
+  accessToken: String!
+  expiredAt: Time!
+}
+
+type AuthResponse {
+  authtoken: AuthToken!
+  user: User!
+}
+
+type User {
+  id:uint!
+  name: String!
+  email: String!
+  todos: [Todo]
+}
+
+input RegisterInput {
+  name: String!
+  email: String!
+  password: String!
+  confirmPassword: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+
+extend type Query {
+  me: User!
+  # todos: [Todo!]!
+}
+
+extend type Mutation {
+  signUp(input: RegisterInput!): AuthResponse!
+  signIn(input: LoginInput!): AuthResponse!
+}

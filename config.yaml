@@ -1,0 +1,13 @@
+db:
+  dsn: postgresql://root:secret@postgres:5432/meetmeup_dev?sslmode=disable
+  # dsn: postgresql://root:secret@localhost:5432/meetmeup_dev?sslmode=disable
+
+
+# db:
+#   host: postgresql
+#   port: 5432
+#   user: root
+#   password: secret
+#   database: meetmeup_dev
+# server:
+#   host: 0.0.0.0
