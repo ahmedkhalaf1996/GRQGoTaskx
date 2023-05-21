@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"GRQGoTask/models"
+	"github.com/ahmedkhalaf1996/GRQGoTaskx/models"
 )
 
 // UserLoaderConfig captures the config to create a new UserLoader
